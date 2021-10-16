@@ -1,0 +1,13 @@
+// provide a <input> space for the user to submit custom answers
+  // store user submissions
+    // eg userName 
+// once user submits valid name (characters only)
+  // present user with multiple choices to begin the story 
+  // provide the user with a 45 second timer on choices when they have to submit custom answers
+    // if the user fails to submit a response by the end of the timer, they should lose for not being actively engaged in the story
+// two choices will always end the story or "lose" the game but they will output different results 
+  
+// one of the choices will allow the user to continue the story to it's conclusion 
+
+// styling should be simple for now 
+  // colors and images that match the tone and plot of the story will accompany each choice the user can make 
