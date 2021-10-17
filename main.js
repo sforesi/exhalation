@@ -1,4 +1,8 @@
 
+/*----------------- Constants -----------------*/
+
+/*------------- Variables (state) -------------*/
+
 var story = {
   chapter: "currentScene",
   currentScene: {
@@ -17,12 +21,19 @@ var story = {
     ]
   }
 }
+
+/*--------- Cached Element References ---------*/
+
+
+/*-------------- Event Listeners --------------*/
 document.addEventListener('DOMContentLoaded', function() {
   var button = document.querySelector('#start-button')
   var input = document.querySelector('#name-input')
   var content = document.querySelector('#content')
   button.addEventListener('click', render)
 })
+
+/*----------------- Functions -----------------*/
 
 function render() {
   content.innerHTML = ` 
@@ -31,17 +42,17 @@ function render() {
   ${getInputs()}  
   <button id = "submit-button">Proceed</button>
   `
-  var button = document.querySelector("submit-button");
+  var button = document.querySelector("#submit-button");
   button.addEventListener('click', function(){
-  
+    getInputValue()
   })
 }
 
 function getInputValue(){
   var inputs = document.querySelectorAll('input[type="radio"]');
   for (var i = 0; i < inputs.length; i++) {
-    if (inputs[i].checked){
-      consolee.log(input[i])
+    if (inputs[i].checked) {
+      console.log(inputs[i])
     }
   }
 }
