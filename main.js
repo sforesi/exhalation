@@ -3,7 +3,7 @@
 
 /*------------- Variables (state) -------------*/
 
-var story = {
+let story = {
   chapter: "currentScene",
   currentScene: {
     title: "Chapter 1",
@@ -27,9 +27,9 @@ var story = {
 
 /*-------------- Event Listeners --------------*/
 document.addEventListener('DOMContentLoaded', function() {
-  var button = document.querySelector('#start-button')
-  var input = document.querySelector('#name-input')
-  var content = document.querySelector('#content')
+  let button = document.querySelector('#start-button')
+  let input = document.querySelector('#name-input')
+  let content = document.querySelector('#content')
   button.addEventListener('click', render)
 })
 
@@ -42,15 +42,15 @@ function render() {
   ${getInputs()}  
   <button id = "submit-button">Proceed</button>
   `
-  var button = document.querySelector("#submit-button");
+  let button = document.querySelector("#submit-button");
   button.addEventListener('click', function(){
     getInputValue()
   })
 }
 
 function getInputValue(){
-  var inputs = document.querySelectorAll('input[type="radio"]');
-  for (var i = 0; i < inputs.length; i++) {
+  let inputs = document.querySelectorAll('input[type="radio"]');
+  for (let i = 0; i < inputs.length; i++) {
     if (inputs[i].checked) {
       console.log(inputs[i])
     }
@@ -58,8 +58,8 @@ function getInputValue(){
 }
 
 function getInputs() {
-  var input = ""
-  for (var i = 0; i < story.currentScene.choices.length; i++) {
+  let input = ""
+  for (let i = 0; i < story.currentScene.choices.length; i++) {
     input += `
     <div>
     <input id = "radio${i}" type = "radio" name = "choices"/> 
