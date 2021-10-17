@@ -10,13 +10,16 @@ let story = {
     text: "Back again? You move through a packed marketplace, navigating your way through the busy traffic. You briefly stop to talk with a fruit vendor, who greets you kindly and hands you a date. You accept graciously and continue through the marketplace. You cut through the crowd and come to stop at a curious shop fronted by massive bronze and silver metalworks. Do you enter?",
     choices: [
       {
-        choice: "You window-shop for a while, but ultimately decide it’s all a little too gaudy for your taste."
+        choice: "You window-shop for a while, but ultimately decide it’s all a little too gaudy for your taste.",
+        destination: 'gaudy'
       },
       {
-        choice: "Your interest is peaked, you walk in."
+        choice: "Your interest is peaked, you walk in.",
+        destination: 'enter'
       },
       {
-        choice: "No, you walk away. Chooising to save adventure for another day."
+        choice: "No, you walk away. Chooising to save adventure for another day.",
+        destination: 'disinterested' 
       },
     ]
   }
@@ -62,7 +65,7 @@ function getInputs() {
   for (let i = 0; i < story.currentScene.choices.length; i++) {
     input += `
     <div>
-    <input id = "radio${i}" type = "radio" name = "choices"/> 
+    <input data-destination = ${story.currentScene.choices[i].destination}  id = "radio${i}" type = "radio" name = "choices"/> 
     <label for "radio${i}">${story.currentScene.choices[i].choice}</label>
     </div>      
     `    
