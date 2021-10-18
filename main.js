@@ -4,8 +4,8 @@
 /*------------- Variables (state) -------------*/
 
 let story = {
-  chapter: "currentScene",
-  currentScene: {
+  // chapter: "currentScene",
+  // currentScene: {
     title: "Chapter 1",
     text: "Back again? You move through a packed marketplace, navigating your way through the busy traffic. You briefly stop to talk with a fruit vendor, who greets you kindly and hands you a date. You accept graciously and continue through the marketplace. You cut through the crowd and come to stop at a curious shop fronted by massive bronze and silver metalworks. Do you enter?",
     choices: [
@@ -23,7 +23,7 @@ let story = {
       }
     ]
   }
-}
+
 
 let enter= {
   title: "A curious mind!",
@@ -49,6 +49,7 @@ let gaudy = {
   const startButton = document.querySelector('#start-button')
   const input = document.querySelector('#name-input')
   const content = document.querySelector('#content')
+  const submitButton = document
 
 /*-------------- Event Listeners --------------*/
   
@@ -56,12 +57,13 @@ let gaudy = {
   submitButton.addEventListener('click', function(){
   getInputValue()
 })
+
 /*----------------- Functions -----------------*/
 
 function render() {
   content.innerHTML = ` 
-  <h1>${story.currentScene.title}<h1>
-  <p>${story.currentScene.text}</p> 
+  <h1>${story.title}<h1>
+  <p>${story.text}</p> 
   ${getInputs()}  
   <button id = "submit-button">Proceed</button>
   `
@@ -79,14 +81,14 @@ function getInputValue(){
 
 function getInputs() {
   let input = ""
-  for (let i = 0; i < story.currentScene.choices.length; i++) {
+  for (let i = 0; i < story.choices.length; i++) {
     input += `
     <div>
-    <input data-destination = ${story.currentScene.choices[i].destination}  id = "radio${i}" type = "radio" name = "choices"/> 
-    <label for "radio${i}">${story.currentScene.choices[i].choice}</label>
+    <input data-destination = ${story.choices[i].destination}  id = "radio${i}" type = "radio" name = "choices"/> 
+    <label for "radio${i}">${story.choices[i].choice}</label>
     </div>      
     `    
-    console.log(story.currentScene.choices[i].choice)
+    console.log(story.choices[i].choice)
   }
   return input;
 }
