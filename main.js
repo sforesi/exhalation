@@ -47,13 +47,13 @@ let gaudy = {
   const startButton = document.querySelector('#start-button')
   const input = document.querySelector('#name-input')
   const content = document.querySelector('#content')
-  const submitButton = document
+  const submitButton = document.querySelector('#submit-button')
 
 /*-------------- Event Listeners --------------*/
   
   startButton.addEventListener('click', render)
   submitButton.addEventListener('click', function() {
-  getUserInput()
+  getPlayerChoice()
 })
 
 /*----------------- Functions -----------------*/
@@ -69,7 +69,7 @@ function render() {
   let submitButton = document.querySelector("#submit-button");
 }
 
-function getUserInput(){
+function getPlayerChoice(){
   let inputs = document.querySelectorAll('input[type="radio"]');
   for (let i = 0; i < inputs.length; i++) {
     if (inputs[i].checked) {
