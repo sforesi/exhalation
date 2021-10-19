@@ -4,23 +4,23 @@
 /*------------- Variables (state) -------------*/
 //object to establish the original state of the game
 let story = {
-    title: "Chapter 1",
-    text: "Back again? You move through a packed marketplace, navigating your way through the busy traffic. You briefly stop to talk with a fruit vendor, who greets you kindly and hands you a date. You accept graciously and continue through the marketplace. You cut through the crowd and come to stop at a curious shop fronted by massive bronze and silver metalworks. Do you enter?",
-    choices: [ // array of choices and destinations 
-      {
-        choice: "Your interest is peaked, you walk in.",
-        destination: 'enter',
-      },
-      {
-        choice: "You window-shop for a while, but ultimately decide it’s all a little too gaudy for your taste.",
-        destination: 'gaudy',
-      },
-      {
-        choice: "No, you walk away. Chooising to save adventure for another day.",
-        destination: 'disinterested', 
-      }
-    ]
-  }
+  title: "Chapter 1",
+  text: "Back again? You move through a packed marketplace, navigating your way through the busy traffic. You briefly stop to talk with a fruit vendor, who greets you kindly and hands you a date. You accept graciously and continue through the marketplace. You cut through the crowd and come to stop at a curious shop fronted by massive bronze and silver metalworks. Do you enter?",
+  choices: [ // array of choices and destinations 
+    {
+      choice: "Your interest is peaked, you walk in.",
+      destination: 'enter',
+    },
+    {
+      choice: "You window-shop for a while, but ultimately decide it’s all a little too gaudy for your taste.",
+      destination: 'gaudy',
+    },
+    {
+      choice: "No, you walk away. Chooising to save adventure for another day.",
+      destination: 'disinterested', 
+    }
+  ]
+}
 
 
 let enter= { 
@@ -47,14 +47,11 @@ let gaudy = {
   const startButton = document.querySelector('#start-button')
   const input = document.querySelector('#name-input')
   const content = document.querySelector('#content')
-  const submitButton = document.querySelector('#submit-button')
 
 /*-------------- Event Listeners --------------*/
   
   startButton.addEventListener('click', render)
-  submitButton.addEventListener('click', function() {
-  getPlayerChoice()
-})
+  
 
 /*----------------- Functions -----------------*/
 
@@ -64,19 +61,22 @@ function render() {
   <h1>${story.title}<h1> 
   <p>${story.text}</p> 
   ${getInputs()}  
-  <button id = "submit-button">Proceed</button>
-  `
-  let submitButton = document.querySelector("#submit-button");
+  <button id='submit-button'>Proceed</button>
+  `  
+  const submitButton = document.querySelector('#submit-button')
+  submitButton.addEventListener('click', getPlayerChoice)
 }
 
 function getPlayerChoice(){
   let inputs = document.querySelectorAll('input[type="radio"]');
+  console.log('i run!')
   for (let i = 0; i < inputs.length; i++) {
     if (inputs[i].checked) {
-      story.title = inputs[i].getAttribute('data-destination')
-      render()
-    } 
-  } // function to check user input/
+      story.title = inputs[i].getAttribute('data-destination') 
+      story.text = window[story.title].text 
+    } console.log(story.text)
+  } 
+  render() // function to check user input/
 }
 
 function getInputs() {
