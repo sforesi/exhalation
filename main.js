@@ -73,7 +73,8 @@ function getUserInput(){
   let inputs = document.querySelectorAll('input[type="radio"]');
   for (let i = 0; i < inputs.length; i++) {
     if (inputs[i].checked) {
-      console.log(inputs[i].getAttribute('data-destination'))
+      story.title = inputs[i].getAttribute('data-destination')
+      render()
     } 
   } // function to check user input/
 }
