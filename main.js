@@ -62,11 +62,11 @@ let currentChapter = {}
 /*----------------- Functions -----------------*/
 
 // function to render the current scene 
-function render() {
+function render(chapter) {
   content.innerHTML = ` 
-  <h1>${story.title}<h1> 
-  <p>${story.text}</p> 
-  ${getChoices()}  
+  <h1>${story[chapter].title}<h1> 
+  <p>${story[chapter].text}</p> 
+  ${getChoices(chapter)}  
   <button id='submit-button'>Proceed</button>
   `  
   const submitButton = document.querySelector('#submit-button')
@@ -75,14 +75,13 @@ function render() {
 
 function getPlayerChoice() {
   let inputs = document.querySelectorAll('input[type="radio"]');
-  console.log('i run!')
+  let newChapter  
   for (let i = 0; i < inputs.length; i++) {
     if (inputs[i].checked) {
-      story.title = inputs[i].getAttribute('data-destination') 
-      story.text = story[story.title].text 
-    } console.log(story.text)
-  } 
-  render() // function to check user input/
+      newChapter = inputs[i].getAttribute('data-destination') 
+    } 
+  } // function to check user input/
+  render(newChapter) 
 }
 
 function getChoices(chapter) {
@@ -90,11 +89,11 @@ function getChoices(chapter) {
   for (let i = 0; i < story[chapter].choices.length; i++) {
     input += `
     <div>
-    <input data-destination = ${story.choices[i].destination}  id = "radio${i}" type = "radio" name = "choices"/> 
-    <label for "radio${i}">${story.choices[i].choice}</label>
+    <input data-destination = ${story[chapter].choices[i].destination}  id = "radio${i}" type = "radio" name = "choices"/> 
+    <label for "radio${i}">${story[chapter].choices[i].choice}</label>
     </div>      
     `    
-    console.log(story.choices[i].choice)
+    console.log(story[chapter].choices[i].choice)
   }
   return input; // function to retrieve choices from story object
 }
