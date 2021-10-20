@@ -10,17 +10,18 @@ let story = {
     choices: [ // array of choices and destinations 
       {
         choice: "Your interest is peaked, you walk in.",
-        destination: 'enter',
+        destination: 'enter'
       },
       {
         choice: "You window-shop for a while, but ultimately decide it’s all a little too gaudy for your taste.",
         destination: 'gaudy',
       },
       {
-        choice: "No, you walk away. Chooising to save adventure for another day.",
+        choice: "No, you walk away. Choosing to save adventure for another day.",
         destination: 'disinterested', 
       }
-    ]
+    ], 
+
   }, 
   enter: { 
     title: "A curious mind!",
@@ -28,6 +29,7 @@ let story = {
     choices: [
       {
         choice:'Tell them you want to shop on your own.',
+        destination:''
       },
       {
         choice:'Hand them your resume.',
@@ -35,11 +37,24 @@ let story = {
       {
         choice:'Ask them where they acquired their merchandise.',
       },
-    ]// correct or "winning" choice continues the story with more choices
+    ],// correct or "winning" choice continues the story with more choices
+ 
+
   },
   gaudy: {
     title: "Not your taste...",
-    text: "Your snobbery leads you astray once again, you lose. And perhaps more tragically, you've missed out on adventure.", // incorrect or losing destination
+    text: "Your snobbery leads you astray once again, you lose. And perhaps more tragically, you've missed out on adventure.",
+    choices: [],
+    win: false,
+  
+     // incorrect or losing destination
+  },
+  disinterested: {
+    title: "Not your taste...",
+    text: "You've chosen to save adventure for another time. Try again when you're up for a story!'.",
+    choices: [],
+    win: false,
+     // incorrect or losing destination
   }
 }
 
@@ -84,18 +99,26 @@ function getPlayerChoice() {
   render(newChapter) 
 }
 
-function getChoices(chapter) {
+function getChoices(chapter) {  
+  console.log('i run' + story[chapter].choices)
   let input = ""
-  for (let i = 0; i < story[chapter].choices.length; i++) {
-    input += `
-    <div>
-    <input data-destination = ${story[chapter].choices[i].destination}  id = "radio${i}" type = "radio" name = "choices"/> 
-    <label for "radio${i}">${story[chapter].choices[i].choice}</label>
-    </div>      
-    `    
-    console.log(story[chapter].choices[i].choice)
+  console.log('i run 1: ' + story[chapter].choices[0])
+  console.log('i run 0 keys: ' + Object.keys(story[chapter].choices[0]))
+  if (story[chapter].choices.length !== 0) {  
+    for (let i = 0; i < story[chapter].choices.length; i++) {
+      input += `
+      <div>
+      <input data-destination = ${story[chapter].choices[i].destination}  id = "radio${i}" type = "radio" name = "choices"/> 
+      <label for "radio${i}">${story[chapter].choices[i].choice}</label>
+      </div>      
+      `    
+      console.log(story[chapter].choices[i].choice)
+    }
+    return input; 
+  } else {
+
   }
-  return input; // function to retrieve choices from story object
+   // function to retrieve choices from story object
 }
 
 function startGame() {
