@@ -5,7 +5,7 @@
 //object to establish the original state of the game
 let story = {
   start: {
-    title: "Chapter 1",
+    title: "1",
     text: "Back again? You move through a packed marketplace, navigating your way through the busy traffic. You briefly stop to talk with a fruit vendor, who greets you kindly and hands you a date. You accept graciously and continue through the marketplace. You cut through the crowd and come to stop at a curious shop fronted by massive bronze and silver metalworks. Do you enter?",
     choices: [ // array of choices and destinations 
       {
@@ -38,8 +38,6 @@ let story = {
         choice:'Ask them where they acquired their merchandise.',
       },
     ],// correct or "winning" choice continues the story with more choices
- 
-
   },
   gaudy: {
     title: "Not your taste...",
@@ -63,16 +61,20 @@ let currentChapter = {}
 
 
 
-
 /*--------- Cached Element References ---------*/
   const startButton = document.querySelector('#start-button')
   const input = document.querySelector('#name-input')
   const content = document.querySelector('#content')
-
+  const restartButton = document.querySelector('#restart-button')
+  restartButton.style.display = 'none'
+  const proceedButton = document.querySelector('#submit-button')
+  proceedButton.style.display = 'none'
 /*-------------- Event Listeners --------------*/
   
   startButton.addEventListener('click', startGame)
-  
+  restartButton.addEventListener('click', restartGame)
+  proceedButton.addEventListener('click', getPlayerChoice)
+
 
 /*----------------- Functions -----------------*/
 
@@ -82,10 +84,7 @@ function render(chapter) {
   <h1>${story[chapter].title}<h1> 
   <p>${story[chapter].text}</p> 
   ${getChoices(chapter)}  
-  <button id='submit-button'>Proceed</button>
   `  
-  const submitButton = document.querySelector('#submit-button')
-  submitButton.addEventListener('click', getPlayerChoice)
 }
 
 function getPlayerChoice() {
@@ -103,8 +102,7 @@ function getChoices(chapter) {
   console.log('i run' + story[chapter].choices)
   let input = ""
   console.log('i run 1: ' + story[chapter].choices[0])
-  console.log('i run 0 keys: ' + Object.keys(story[chapter].choices[0]))
-  if (story[chapter].choices.length !== 0) {  
+  if (story[chapter].choices.length) {  
     for (let i = 0; i < story[chapter].choices.length; i++) {
       input += `
       <div>
@@ -114,9 +112,14 @@ function getChoices(chapter) {
       `    
       console.log(story[chapter].choices[i].choice)
     }
+    proceedButton.style.display = 'block'
     return input; 
-  } else {
-
+  } else { 
+    // content.innerHTML = ''
+    restartButton.style.display = 'block'
+    // const proceedButton = document.querySelector('#submit-button')
+    // proceedButton.style.display = 'none'
+    return 'Game Over';  
   }
    // function to retrieve choices from story object
 }
@@ -130,4 +133,8 @@ function startGame() {
   `  
   const submitButton = document.querySelector('#submit-button')
   submitButton.addEventListener('click', getPlayerChoice)
+}
+
+function restartGame() {
+  location.reload()
 }
