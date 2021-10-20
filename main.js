@@ -69,6 +69,11 @@ let currentChapter = {}
   restartButton.style.display = 'none'
   const proceedButton = document.querySelector('#submit-button')
   proceedButton.style.display = 'none'
+  const h1 = document.querySelector('h1')
+  const p = document.querySelector('p')
+  p.style.display = 'none'
+  const nameInput = document.querySelector('#name-input')
+
 /*-------------- Event Listeners --------------*/
   
   startButton.addEventListener('click', startGame)
@@ -115,11 +120,12 @@ function getChoices(chapter) {
     proceedButton.style.display = 'block'
     return input; 
   } else { 
+    input += 'Game over'
     // content.innerHTML = ''
     restartButton.style.display = 'block'
     // const proceedButton = document.querySelector('#submit-button')
     // proceedButton.style.display = 'none'
-    return 'Game Over';  
+    return input;  
   }
    // function to retrieve choices from story object
 }
