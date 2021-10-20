@@ -111,37 +111,44 @@ function getChoices(chapter) {
   // console.log('i run' + story[chapter].choices)
   // let input = ""
   // console.log('i run 1: ' + story[chapter].choices[0])
-  if (story[chapter].choices.length) {  
+  section.style.display = 'block'
+if (story[chapter].choices.length) {  
+    const allChoices = []
+    proceedButton.style.display = 'block'
     for (let i = 0; i < story[chapter].choices.length; i++) {
-      input += `
+      const singleChoice = `
       <div>
       <input data-destination = ${story[chapter].choices[i].destination}  id = "radio${i}" type = "radio" name = "choices"/> 
       <label for "radio${i}">${story[chapter].choices[i].choice}</label>
       </div>      
-      `    
+      `
+      allChoices.push(singleChoice)    
       console.log(story[chapter].choices[i].choice)
     }
-    proceedButton.style.display = 'block'
-    return input; 
+    section.innerText = allChoices
   } else { 
-    input += 'Game over'
-    // content.innerHTML = ''
+    const endMessage = 'Game over'
+    section.innerText = endMessage
+    // content.innerHTML = ''  
     restartButton.style.display = 'block'
     // const proceedButton = document.querySelector('#submit-button')
     // proceedButton.style.display = 'none'
-    return input;  
+    // return input;
   }
    // function to retrieve choices from story object
 }
 
 function startGame() {
-  content.innerHTML = ` 
-  <h1>${story.start.title}<h1> 
-  <p>${story.start.text}</p> 
-  ${getChoices('start')}  
-  <button id='submit-button'>Proceed</button>
-  `  
-  const submitButton = document.querySelector('#submit-button')
+  h1.innerText = story.start.title
+  p.innerText = story.start.text
+  getChoices(start) 
+  // content.innerHTML = ` 
+  // <h1>${story.start.title}<h1> 
+  // <p>${story.start.text}</p> 
+  // ${getChoices('start')}  
+  // <button id='submit-button'>Proceed</button>
+  // `  
+  // const submitButton = document.querySelector('#submit-button')
   submitButton.addEventListener('click', getPlayerChoice)
 }
 
