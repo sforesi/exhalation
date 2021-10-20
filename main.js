@@ -73,7 +73,8 @@ let currentChapter = {}
   const p = document.querySelector('p')
   p.style.display = 'none'
   const nameInput = document.querySelector('#name-input')
-
+  const section = document.querySelector('section')
+  section.style.display = 'none'
 /*-------------- Event Listeners --------------*/
   
   startButton.addEventListener('click', startGame)
@@ -85,11 +86,14 @@ let currentChapter = {}
 
 // function to render the current scene 
 function render(chapter) {
-  content.innerHTML = ` 
-  <h1>${story[chapter].title}<h1> 
-  <p>${story[chapter].text}</p> 
-  ${getChoices(chapter)}  
-  `  
+  // content.innerHTML = ` 
+  // <h1>${story[chapter].title}<h1> 
+  // <p>${story[chapter].text}</p> 
+  // ${getChoices(chapter)}  
+  // `  
+  h1.innerText = story[chapter].title
+  p.innerText = story[chapter].text
+  getChoices(chapter)
 }
 
 function getPlayerChoice() {
@@ -104,9 +108,9 @@ function getPlayerChoice() {
 }
 
 function getChoices(chapter) {  
-  console.log('i run' + story[chapter].choices)
-  let input = ""
-  console.log('i run 1: ' + story[chapter].choices[0])
+  // console.log('i run' + story[chapter].choices)
+  // let input = ""
+  // console.log('i run 1: ' + story[chapter].choices[0])
   if (story[chapter].choices.length) {  
     for (let i = 0; i < story[chapter].choices.length; i++) {
       input += `
