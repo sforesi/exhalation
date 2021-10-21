@@ -28,6 +28,7 @@ body {
   --light-dark-btn-content: "TURN OFF THE LIGHTS";
     background-color: var(--body-bg);
     --scene-background-color: daacae; 
+  overflow: hidden;
 }
 
 
@@ -42,7 +43,7 @@ body.dark {
   --light-dark-btn-bg: linear-gradient(to right top, #957577, #a48183, #b48e90,
     #C69C9E, #daacae, #D87B71, #df928a, #e29c95, #e5a59f, #e7ada8, #e3e5f6, #ebeeff);
   --light-dark-btn-content: "TURN ON THE LIGHTS";
-    background-color: var(--body-bg);
+    /* background-color: var(--body-bg); */
 }
 
 #content {
@@ -50,17 +51,35 @@ body.dark {
   height: 100vh;
   background: white;
   padding: 25px;
-
-
 }
+
+input {
+  margin-top: 24px;
+}
+
+button {
+  border: none;
+  background: none;
+  padding-left: 70px;
+}
+.button-elements{
+  /* border: 1px solid red; */
+  bottom: 0;
+  padding-bottom: 24px;
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  left: 0;
+}
+
 #light-dark-button {
-  background-color: var(--light-dark-btn-bg);
-  background-image: var(--light-dark-btn-bg);
+
 }
 
 #light-dark-button::after {
   border: none;
-  color: var(--inverted-btn-text-color);
+  /* color: var(--inverted-btn-text-color); */
   content: var(--light-dark-btn-content);
 }
 
