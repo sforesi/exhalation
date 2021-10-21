@@ -1,5 +1,13 @@
 
 /*----------------- Constants -----------------*/
+const images = [
+  "https://data.whicdn.com/images/251238216/original.gif",
+  "https://i.gifer.com/7Rrs.gif",
+  "https://i.pinimg.com/originals/b0/10/e9/b010e954f94acbd034917b2d6931bd79.gif",
+  "https://64.media.tumblr.com/5f4c0252b15dda55028536c5a8923c7d/b691a90722d7bbb5-c8/s500x750/34aac55dfd7302e41fec400ba9636edeadb1890a.gif",
+  "https://64.media.tumblr.com/746e848c8b0cf90bc7938599421e6b4e/tumblr_pbhfk0rEth1txe8seo1_500.gif",
+  "https://media2.giphy.com/media/Wm9XlKG2xIMiVcH4CP/giphy.gif"
+];
 
 /*------------- Variables (state) -------------*/
 //object to establish the original state of the game
@@ -76,12 +84,17 @@ let currentChapter = {}
   const section = document.querySelector('section')
   section.style.display = 'none'
   const nameLabel = document.querySelector('#name-label')
+  const lightDarkBtn = document.querySelector("#light-dark-button")
+  const body = document.querySelector("body")
+
+
+checkDarkPref()
 /*-------------- Event Listeners --------------*/
   
   startButton.addEventListener('click', startGame)
   restartButton.addEventListener('click', restartGame)
   proceedButton.addEventListener('click', getPlayerChoice)
-
+  lightDarkBtn.addEventListener("click", toggleLightDark)
 
 
 /*----------------- Functions -----------------*/
@@ -119,8 +132,7 @@ if (story[chapter].choices.length) {
       <input data-destination = ${story[chapter].choices[i].destination}  id = "radio${i}" type = "radio" name = "choices"/> 
       <label for "radio${i}">${story[chapter].choices[i].choice}</label>
       </div>      
-      `
-      // allChoices.push(singleChoice)    
+      `  
       console.log(story[chapter].choices[i].choice)
     }
     section.innerHTML = allChoices
@@ -130,10 +142,6 @@ if (story[chapter].choices.length) {
     // content.innerHTML = ''  
     restartButton.style.display = 'block'
     proceedButton.style.display = 'none'
-
-    // const proceedButton = document.querySelector('#submit-button')
-    // proceedButton.style.display = 'none'
-    // return input;
   }
    // function to retrieve choices from story object
 }
@@ -149,3 +157,27 @@ function startGame() {
 function restartGame() {
   location.reload()
 }
+
+$(document).ready(function () {
+  let current = 0;
+  $("#mirror-content").on("click", function () {
+    $(this).css({
+      "background-image": `url(${images[++current % images.length]})`
+    });
+  });
+});
+
+function toggleLightDark() {
+  body.className = body.className === "dark" ? "" : "dark"
+}
+
+function checkDarkPref() {
+  if (
+    window.matchMedia("(prefers-color-scheme:dark)").matches &&
+    body.className !== "dark"
+  ) {
+    toggleLightDark()
+  }
+}
+
+checkDarkPref()

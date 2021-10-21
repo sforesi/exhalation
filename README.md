@@ -1,10 +1,10 @@
 Background: 
 
-This app is a choose your-own adventure that runs on broswer. 
+This app is a choose your-own adventure that runs on Browser. 
 
 Game Description & Overview: 
 
-In this text-based adventure you set off in a very peculiar store, owned by your friendly new companin. They will guide you through their vast collection of strange trinkets and inventions. Your goal is to get to the end of the story and experience your companions magnum-opus.  
+In this text-based adventure you set off in a very peculiar store, owned by your friendly new companion. They will guide you through their vast collection of strange trinkets and inventions. Your goal is to get to the end of the story and experience your companions magnum-opus.  
 
 
 Rules: 
@@ -17,6 +17,7 @@ Screenshots:
 Features:
 
 -Light/Dark mode
+-turn js
 
 Ice-box Goals/ Improvements to Come: 
 
