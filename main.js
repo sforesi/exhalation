@@ -82,6 +82,7 @@ let currentChapter = {}
   proceedButton.addEventListener('click', getPlayerChoice)
 
 
+
 /*----------------- Functions -----------------*/
 
 // function to render the current scene 
@@ -93,6 +94,7 @@ function render(chapter) {
   // `  
   h1.innerText = story[chapter].title
   p.innerText = story[chapter].text
+  p.style.display = 'block'
   getChoices(chapter)
 }
 
@@ -112,25 +114,29 @@ function getChoices(chapter) {
   // let input = ""
   // console.log('i run 1: ' + story[chapter].choices[0])
   section.style.display = 'block'
+  startButton.style.display = 'none'
+  nameInput.style.display = 'none'
 if (story[chapter].choices.length) {  
-    const allChoices = []
+    let allChoices = ''
     proceedButton.style.display = 'block'
     for (let i = 0; i < story[chapter].choices.length; i++) {
-      const singleChoice = `
+      allChoices += `
       <div>
       <input data-destination = ${story[chapter].choices[i].destination}  id = "radio${i}" type = "radio" name = "choices"/> 
       <label for "radio${i}">${story[chapter].choices[i].choice}</label>
       </div>      
       `
-      allChoices.push(singleChoice)    
+      // allChoices.push(singleChoice)    
       console.log(story[chapter].choices[i].choice)
     }
-    section.innerText = allChoices
+    section.innerHTML = allChoices
   } else { 
     const endMessage = 'Game over'
-    section.innerText = endMessage
+    section.innerHTML = endMessage
     // content.innerHTML = ''  
     restartButton.style.display = 'block'
+    proceedButton.style.display = 'none'
+
     // const proceedButton = document.querySelector('#submit-button')
     // proceedButton.style.display = 'none'
     // return input;
@@ -141,7 +147,7 @@ if (story[chapter].choices.length) {
 function startGame() {
   h1.innerText = story.start.title
   p.innerText = story.start.text
-  getChoices(start) 
+  getChoices('start') 
   // content.innerHTML = ` 
   // <h1>${story.start.title}<h1> 
   // <p>${story.start.text}</p> 
@@ -149,7 +155,7 @@ function startGame() {
   // <button id='submit-button'>Proceed</button>
   // `  
   // const submitButton = document.querySelector('#submit-button')
-  submitButton.addEventListener('click', getPlayerChoice)
+  proceedButton.style.display = 'block'
 }
 
 function restartGame() {
