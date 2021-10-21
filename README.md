@@ -10,10 +10,24 @@ In this text-based adventure you set off in a strange world
 Rules: 
 
 
-Screenshhots:
+Screenshots:
 
-ICEBOX 
+
+Features:
+
+Ice-box Goals/ Improvements to Come: 
 
 // 3d render scenes
 // timer functionality 
 // checkpoint navbar
+
+Pseudocode + Wirefames:
+
+Techonologies Used:
+-HTML 
+-CSS 
+-JS
+
+
+Credits & Sources: 
+
