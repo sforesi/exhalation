@@ -75,6 +75,7 @@ let currentChapter = {}
   const nameInput = document.querySelector('#name-input')
   const section = document.querySelector('section')
   section.style.display = 'none'
+  const nameLabel = document.querySelector('#name-label')
 /*-------------- Event Listeners --------------*/
   
   startButton.addEventListener('click', startGame)
@@ -94,7 +95,7 @@ function render(chapter) {
   // `  
   h1.innerText = story[chapter].title
   p.innerText = story[chapter].text
-  p.style.display = 'block'
+  
   getChoices(chapter)
 }
 
@@ -116,6 +117,7 @@ function getChoices(chapter) {
   section.style.display = 'block'
   startButton.style.display = 'none'
   nameInput.style.display = 'none'
+  nameLabel.style.display = 'none'
 if (story[chapter].choices.length) {  
     let allChoices = ''
     proceedButton.style.display = 'block'
@@ -148,6 +150,7 @@ function startGame() {
   h1.innerText = story.start.title
   p.innerText = story.start.text
   getChoices('start') 
+  p.style.display = 'block'
   // content.innerHTML = ` 
   // <h1>${story.start.title}<h1> 
   // <p>${story.start.text}</p> 
