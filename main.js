@@ -77,8 +77,8 @@ let currentChapter = {}
   restartButton.style.display = 'none'
   const proceedButton = document.querySelector('#submit-button')
   proceedButton.style.display = 'none'
-  const h1 = document.querySelector('h1')
-  const p = document.querySelector('p')
+  const h1 = document.querySelector('#title')
+  const p = document.querySelector('#text')
   p.style.display = 'none'
   const nameInput = document.querySelector('#name-input')
   const section = document.querySelector('section')
@@ -103,7 +103,7 @@ checkDarkPref()
 function render(chapter) {
   h1.innerText = story[chapter].title
   p.innerText = story[chapter].text
-  
+  // section.appendChild(h1)
   getChoices(chapter)
 }
 
@@ -158,14 +158,14 @@ function restartGame() {
   location.reload()
 }
 
-$(document).ready(function () {
-  let current = 0;
-  $("#mirror-content").on("click", function () {
-    $(this).css({
-      "background-image": `url(${images[++current % images.length]})`
-    });
-  });
-});
+// document.ready(function () {
+//   let current = 0;
+//   $("#mirror-content").on("click", function () {
+//     $(this).css({
+//       "background-image": `url(${images[++current % images.length]})`
+//     });
+//   });
+// });
 
 function toggleLightDark() {
   body.className = body.className === "dark" ? "" : "dark"
