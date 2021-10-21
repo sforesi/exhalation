@@ -1,16 +1,3 @@
-/* body {
-  display: flex;  /* defaults to row layout */
- 	/* justify-content: center;  centers items horizontally in row layout */
- 	/* align-items: center;  centers vertically in row layout */
- 	/* flex-direction: column; will set layout to column instead of row */
-/* } */ 
-
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
 
 body {
   width: 100%;
@@ -18,21 +5,6 @@ body {
   display: flex;
   justify-content: center;
   background: #bd979f;
-  --body-bg: #8a8b9b;
-  --btn-text-color: #2a2a2a;
-  --card-text-color: #3e3e3e;
-  --header-bg: #007bbe;
-  --header-text-color: #d8d8d8;
-  --inverted-btn-text-color: #eaeaea;
-  --light-dark-btn-bg: #1d1e2b;
-  --light-dark-btn-content: "TURN OFF THE LIGHTS";
-    background-color: var(--body-bg);
-    --scene-background-color: daacae; 
-  overflow: hidden;
-}
-
-
-body.dark {
   --body-bg:#957577;
   --btn-text-color: #a48183;
   --card-text-color: #dedede;
@@ -40,9 +12,22 @@ body.dark {
   --header-text-color: #d8d8d8;
   --scene-background-color: pink; 
   --inverted-btn-text-color: #2a2a2a;
-  --light-dark-btn-bg: linear-gradient(to right top, #957577, #a48183, #b48e90,
-    #C69C9E, #daacae, #D87B71, #df928a, #e29c95, #e5a59f, #e7ada8, #e3e5f6, #ebeeff);
   --light-dark-btn-content: "TURN ON THE LIGHTS";
+  overflow: hidden;
+}
+
+
+body.dark {
+  --body-bg: #8a8b9b;
+  --btn-text-color: #2a2a2a;
+  --card-text-color: #3e3e3e;
+  --header-bg: #007bbe;
+  --header-text-color: #d8d8d8;
+  --inverted-btn-text-color: #eaeaea;
+  --light-dark-btn-content: "TURN OFF THE LIGHTS";
+    background-color: var(--body-bg);
+    --scene-background-color: #daacae; 
+  overflow: hidden;
     /* background-color: var(--body-bg); */
 }
 
@@ -63,7 +48,6 @@ button {
   padding-left: 70px;
 }
 .button-elements{
-  /* border: 1px solid red; */
   bottom: 0;
   padding-bottom: 24px;
   position: absolute;
@@ -82,6 +66,14 @@ button {
   /* color: var(--inverted-btn-text-color); */
   content: var(--light-dark-btn-content);
 }
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 
 .scene {
   width: 100%;

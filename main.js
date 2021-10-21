@@ -32,18 +32,20 @@ let story = {
 
   }, 
   enter: { 
-    title: "A curious mind!",
+    title: "2",
     text: "You enter the shop, which hums with the whirs and clanks of gears and mechanisms. At the entrance sits an astrolabe inlaid in silver, so large it could be the face of a clock tower. A water-clock sounds, its chime whistled by a swallow that seems to raise itself out the water. A figure steps out from what seems to be an infinite doorway. Their eyes are kind and familiar, their voice warm. They greet you like an old friend. How do you respond?",
     choices: [
       {
         choice:'Tell them you want to shop on your own.',
-        destination:''
+        destination:'solo',
       },
       {
         choice:'Hand them your resume.',
+        destination: 'resume'
       },
       {
-        choice:'Ask them where they acquired their merchandise.',
+        choice:'Compliment the collection and ask them where they acquired their merchandise.',
+        destination: 'curious'
       },
     ],// correct or "winning" choice continues the story with more choices
   },
@@ -55,13 +57,38 @@ let story = {
   
      // incorrect or losing destination
   },
-  disinterested: {
+  solo: {
     title: "Not your taste...",
     text: "You've chosen to save adventure for another time. Try again when you're up for a story!'.",
     choices: [],
     win: false,
      // incorrect or losing destination
-  }
+  },
+  resume: {
+    title: "Not your taste...",
+    text: "You've chosen to save adventure for another time. Try again when you're up for a story!'.",
+    choices: [],
+    win: false,
+     // incorrect or losing destination
+  },
+  curious: {
+    title: "3",
+    text: '"I am grateful for your kind words. Everything you see here was made in my workshop, either by myself or by my assistants under my direction," says your companion. You start to notice strange symbols all around the shop.  ',
+    choices: [
+      {
+        choice:'Compliment them on their hat',
+        destination:'compliments',
+      },
+      {
+        choice:'Ask them about the symbols on the wall.',
+        destination: 'symbols'
+      },
+      {
+        choice:'Tell them outright that you think Alchemy is hogwash, and you know better than to credit it.',
+        destination: 'alchemy'
+      },
+    ],
+  },
 }
 
 let currentChapter = {}
@@ -158,14 +185,6 @@ function restartGame() {
   location.reload()
 }
 
-// document.ready(function () {
-//   let current = 0;
-//   $("#mirror-content").on("click", function () {
-//     $(this).css({
-//       "background-image": `url(${images[++current % images.length]})`
-//     });
-//   });
-// });
 
 function toggleLightDark() {
   body.className = body.className === "dark" ? "" : "dark"
@@ -181,3 +200,13 @@ function checkDarkPref() {
 }
 
 checkDarkPref()
+
+// $(document).ready(function () {
+//   let current = 0;
+//   $("#mirror-content").on("click", function () {
+//     $(this).css({
+//       "background-image": `url(${images[++current % images.length]})`
+//     });
+//   });
+// });
+
