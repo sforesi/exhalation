@@ -25,23 +25,23 @@ body {
   --header-text-color: #d8d8d8;
   --inverted-btn-text-color: #eaeaea;
   --light-dark-btn-bg: #1d1e2b;
-  --light-dark-btn-content: "Dark Mode";
+  --light-dark-btn-content: "TURN OFF THE LIGHTS";
     background-color: var(--body-bg);
-    --scene-background-color: blue; 
+    --scene-background-color: #daacae; 
 }
 
 
 body.dark {
-  --body-bg:#22232b;
-  --btn-text-color: #eaeaea;
+  --body-bg:#957577;
+  --btn-text-color: #a48183;
   --card-text-color: #dedede;
   --header-bg: #005e9d;
   --header-text-color: #d8d8d8;
   --scene-background-color: pink; 
   --inverted-btn-text-color: #2a2a2a;
-  --light-dark-btn-bg: linear-gradient(to right top, #444655, #595b6b, #6f7181,
-    #868898, #9ea0b0, #acaebe, #bbbccd, #cacbdc, #d2d4e5, #dadced, #e3e5f6, #ebeeff);
-  --light-dark-btn-content: "Light Mode";
+  --light-dark-btn-bg: linear-gradient(to right top, #957577, #a48183, #b48e90,
+    #C69C9E, #daacae, #D87B71, #df928a, #e29c95, #e5a59f, #e7ada8, #e3e5f6, #ebeeff);
+  --light-dark-btn-content: "TURN ON THE LIGHTS";
     background-color: var(--body-bg);
 }
 
