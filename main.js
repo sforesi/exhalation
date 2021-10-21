@@ -88,11 +88,6 @@ let currentChapter = {}
 
 // function to render the current scene 
 function render(chapter) {
-  // content.innerHTML = ` 
-  // <h1>${story[chapter].title}<h1> 
-  // <p>${story[chapter].text}</p> 
-  // ${getChoices(chapter)}  
-  // `  
   h1.innerText = story[chapter].title
   p.innerText = story[chapter].text
   
@@ -111,9 +106,6 @@ function getPlayerChoice() {
 }
 
 function getChoices(chapter) {  
-  // console.log('i run' + story[chapter].choices)
-  // let input = ""
-  // console.log('i run 1: ' + story[chapter].choices[0])
   section.style.display = 'block'
   startButton.style.display = 'none'
   nameInput.style.display = 'none'
@@ -151,13 +143,6 @@ function startGame() {
   p.innerText = story.start.text
   getChoices('start') 
   p.style.display = 'block'
-  // content.innerHTML = ` 
-  // <h1>${story.start.title}<h1> 
-  // <p>${story.start.text}</p> 
-  // ${getChoices('start')}  
-  // <button id='submit-button'>Proceed</button>
-  // `  
-  // const submitButton = document.querySelector('#submit-button')
   proceedButton.style.display = 'block'
 }
 
