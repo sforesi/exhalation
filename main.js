@@ -85,11 +85,11 @@ let story = {
 
   curious: {
     title: "3",
-    text: '"I am grateful for your kind words. Everything you see here was made in my workshop, either by myself or by my assistants under my direction," says your companion. You start to notice strange symbols all around the shop.  ',
+    text: '"I am grateful for your kind words. Everything you see here was made in my workshop, either by myself or by my assistants under my direction," says your companion. You start to notice strange symbols all around the shop. You think they might be alchemical in nature. How do you respond?  ',
     choices: [
       {
         choice:'Compliment them on their hat',
-        destination:'compliments',
+        destination:'compliment',
       },
       {
         choice:'Ask them about the symbols on the wall.',
@@ -101,6 +101,77 @@ let story = {
       },
     ],
   },
+
+  compliment: {
+    title: "I think just the one compliment was enough...",
+    text: "Your would-be companion feels like you're coming on too strong. They leave you to shop alone.",
+    choices: [],
+    win: false,
+     // incorrect or losing destination
+  },
+  
+  symbols: {
+    title: "I think just the one compliment was enough...",
+    text: "Your would-be companion feels like you're coming on too strong. They leave you to shop alone.",
+    choices: [],
+    win: false,
+     // incorrect or losing destination
+  },
+
+  alchemy: {
+    title: "4",
+    text: "Clearly you've struck a nerve with you companion, as they ignore two shouting voices from right outside the story. Instead, they tell you they've recently built something that may change your mind... Do you care to see it?",
+    choices: [
+      {
+        choice: "No, you go to check on what all the commotion is about.",
+        destination:'yelling',
+      },
+      {
+        choice:'Yes, without a moments hesitation.',
+        destination: 'show',
+      },
+      {
+        choice:"Tell them that even if alchemy does exist, it is surely the Devil's art, and storm out the store",
+        destination: 'devil',
+      },
+    ],
+  },
+
+  yelling: {
+    title: "Curiousity killed the cat...",
+    text: "Well not really... you go outside to find what you mistook for two people yelling were actually two very large tabby cats in the middle of a heated scuffle. You turn back to walk into the shop, yet somehow when you do, it's vanished.",
+    choices: [],
+    win: false,
+     // incorrect or losing destination
+  },
+
+  show: {
+    title: "5",
+    text: "Your companion leads you down the corridor towards their workshop. It's brimming with devices and mechanism you've never seen. Winding labyrinths of metal bars, a mirror mounted on circular slab floats in quicksilver. How do you react to the workshop?",
+    choices: [
+      {
+        choice: "No, you go to check on what all the commotion is about.",
+        destination:'yelling',
+      },
+      {
+        choice:'Yes, without a moments hesitation.',
+        destination: 'show',
+      },
+      {
+        choice:"Tell them that even if alchemy does exist, it is surely the Devil's art, and storm out the store",
+        destination: 'devil',
+      },
+    ],
+},
+
+devil: {
+  title: "Satan, satan, satan...",
+  text: "You leave the shop, never getting to find out whether or not Alchemy is real. Well, unless you play again.",
+  choices: [],
+  win: false,
+   // incorrect or losing destination
+},
+
 }
 
 let currentChapter = {}
