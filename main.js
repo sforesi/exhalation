@@ -1,8 +1,6 @@
 
 /*----------------- Constants -----------------*/
 const images = [
-
-  
   "https://media3.giphy.com/media/26tnaNlcZHVwfsQTe/giphy.gif?cid=790b7611655928d137c77e4961b901c4b4e8d7d19cdad8ff&rid=giphy.gif&ct=g",
   "https://media.giphy.com/media/lKKXOCVviOAXS/giphy-downsized-large.gif",
   "https://media4.giphy.com/media/1AiqjMPNltYFVyFF2z/giphy.gif?cid=790b761175e804ef1f35d71b5bd2e35aa0733a76f459354b&rid=giphy.gif&ct=g",
@@ -10,8 +8,13 @@ const images = [
   "",
 ];
 
+const gameMusic = new Audio('music/watermarked_Kit_Keenlyside_Photos_Of_Our_Lives_instrumental_2_18.mp3')
+
+
 /*------------- Variables (state) -------------*/
 //object to establish the original state of the game
+
+
 let story = {
   start: {
     title: "1",
@@ -162,45 +165,58 @@ let story = {
         destination: 'witch',
       },
     ],
-},
+  },  
 
-devil: {
-  title: "Satan, satan, satan...",
-  text: "You leave the shop, never getting to find out whether or not Alchemy is real. Well, unless you play again.",
-  choices: [],
-  win: false,
-   // incorrect or losing destination
-},
-
-
-scoff: {
-  title: "Curiousity killed the cat...",
-  text: "Well not really... you go outside to find what you mistook for two people yelling were actually two very large tabby cats in the middle of a heated scuffle. You turn back to walk into the shop, yet somehow when you do, it's vanished.",
-  choices: [],
-  win: false,
-   // incorrect or losing destination
-},
+  devil: {
+    title: "Satan, satan, satan...",
+    text: "You leave the shop, never getting to find out whether or not Alchemy is real. Well, unless you play again.",
+    choices: [],
+    win: false,
+    // incorrect or losing destination
+  },
 
 applaud: {
   title: "6",
   text: "Your companion pulls their arm out and takes a step back away from the hoop. As they back away, their appears out the left side of the hoop and waves up and down enthusiastically. 'Thank you, my lord. But this is not mere slight of hand. The right precedes the left by several seconds. To pass through the hoop is to cross that duration instantly.' What do you do?",
   choices: [
     {
-      choice: "Applaud courteously, even though you think it's a little embarassing that they're into party-ma.",
-      destination:'applaud',
-    },
+      choice: "Play it off like you get what's happening.",
+      destination:'play',
+    }, 
+
     {
-      choice:'Scoff at how stupid the illusion is, and act like you totally get how it works.',
-      destination: 'scoff',
+      choice:"Tell him you actually missed what he just did and to do it again.",
+      destination: 'missed',
     },
+
     {
-      choice:"Knock the pedestal down, and run out the store. You have no time for witch-craft.",
-      destination: 'witch',
+      choice: "Admit you don't understand what you're seeing.",
+      destination: 'admit',
     },
   ],
 },
+  witch: {
+    title: "Dude, it's not witch-craft.",
+    text: "And even if it was, why are you being a jerk about it? Your campanion asks you to leave.",
+    choices: [],
+    win: false,
+    // incorrect or losing destination
+    },  
 
-
+      play: {
+        title: "Satan, satan, satan...",
+        text: "You leave the shop, never getting to find out whether or not Alchemy is real. Well, unless you play again.",
+        choices: [],
+        win: false,
+        // incorrect or losing destination
+    },
+  play: {
+    title: "Satan, satan, satan...",
+    text: "You leave the shop, never getting to find out whether or not Alchemy is real. Well, unless you play again.",
+    choices: [],
+    win: false,
+    // incorrect or losing destination
+  },
 }
 
 let currentChapter = {}
@@ -332,4 +348,9 @@ document.addEventListener("DOMContentLoaded", function() { // create an event li
   }//the even listener that listens for user click
 }
 );
+
+function gameMusicPlay(){
+  gameMusic.volume = 0.1
+  gameMusic.play()
+}
 
