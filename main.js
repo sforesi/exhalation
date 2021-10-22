@@ -1,10 +1,13 @@
 
 /*----------------- Constants -----------------*/
 const images = [
-  "https://media4.giphy.com/media/MuAsb0Gatgo4a4BEYx/giphy.gif?cid=790b76112abd1e6a3b73bb53f2ef57a53e827266ceb83968&rid=giphy.gif&ct=g",
-  "https://media0.giphy.com/media/3og0IV7MOCfnm85iRa/giphy.gif?cid=790b7611eabe3308d23f076b6d11d4e0d5c1972672b25b2e&rid=giphy.gif&ct=g",
+
+  
   "https://media3.giphy.com/media/26tnaNlcZHVwfsQTe/giphy.gif?cid=790b7611655928d137c77e4961b901c4b4e8d7d19cdad8ff&rid=giphy.gif&ct=g",
-  "https://media4.giphy.com/media/H1B8ZtMvhpy6QjpOnN/giphy.gif?cid=790b76112743c6d301390f9e0157fa3cf3429240d52f8fa0&rid=giphy.gif&ct=g",
+  "https://media.giphy.com/media/lKKXOCVviOAXS/giphy-downsized-large.gif",
+  "https://media4.giphy.com/media/1AiqjMPNltYFVyFF2z/giphy.gif?cid=790b761175e804ef1f35d71b5bd2e35aa0733a76f459354b&rid=giphy.gif&ct=g",
+  "https://media0.giphy.com/media/3og0IV7MOCfnm85iRa/giphy.gif?cid=790b7611eabe3308d23f076b6d11d4e0d5c1972672b25b2e&rid=giphy.gif&ct=g",
+  "",
 ];
 
 /*------------- Variables (state) -------------*/
