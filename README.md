@@ -20,9 +20,9 @@ After entering your desired 'Player Name', you'll be prompted by a chapter and s
 
 ## **Screenshots**
 
-![start screen](homepage.png)
-![game play](Gameplay.png)
-![game over](gameover.png)
+![start screen](screenshots/homepage.png)
+![game play](screenshots/Gameplay.png)
+![game over](screenshots/gameover.png)
 
 
 
