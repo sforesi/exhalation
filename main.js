@@ -127,7 +127,7 @@ let story = {
         destination:'yelling',
       },
       {
-        choice:'Yes, without a moments hesitation.',
+        choice:'Yes, without hesitation.',
         destination: 'show',
       },
       {
@@ -179,6 +179,25 @@ scoff: {
   choices: [],
   win: false,
    // incorrect or losing destination
+},
+
+applaud: {
+  title: "6",
+  text: "Your companion pulls their arm out and takes a step back away from the hoop. As they back away, their appears out the left side of the hoop and waves up and down enthusiastically. 'Thank you, my lord. But this is not mere slight of hand. The right precedes the left by several seconds. To pass through the hoop is to cross that duration instantly.' What do you do?",
+  choices: [
+    {
+      choice: "Applaud courteously, even though you think it's a little embarassing that they're into party-ma.",
+      destination:'applaud',
+    },
+    {
+      choice:'Scoff at how stupid the illusion is, and act like you totally get how it works.',
+      destination: 'scoff',
+    },
+    {
+      choice:"Knock the pedestal down, and run out the store. You have no time for witch-craft.",
+      destination: 'witch',
+    },
+  ],
 },
 
 

@@ -12,7 +12,7 @@ This app is a choose your-own adventure that runs on Browser.
 
 ### **Game Description & Overview** 
 
-In this text-based adventure you set off in a very peculiar store, owned by your friendly new companion. They will guide you through their vast collection of strange trinkets and inventions. Your goal is to get to the end of the story and experience your companions magnum-opus.  
+In this text-based adventure, you set off in a very peculiar store, owned by your friendly new companion. They will guide you through their vast collection of strange trinkets and inventions. Your goal is to get to the end of the story and experience your companions magnum-opus.  
 
 
 ### **Rules** 
@@ -24,9 +24,6 @@ After entering your desired 'Player Name', you'll be prompted by a chapter and s
 ![start screen](screenshots/homepage.png)
 ![game play](screenshots/Gameplay.png)
 ![game over](screenshots/gameover.png)
-
-
-
 
 
 ### **Ice-Box Goals & Improvements to Come** 
@@ -47,7 +44,7 @@ As I develop my skills, I'd like to eventually add more functionality and stylin
 
 #### Corridor Outline
 
-[Jackie Zen Mirror](https://codepen.io/jackiezen/details/JjJxGOY)
+[Jackie](https://codepen.io/jackiezen/details/JjJxGOY)
 
 #### Images 
 
