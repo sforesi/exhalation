@@ -1,3 +1,6 @@
+#Exhalation
+
+
 **Background:** 
 
 This app is a choose your-own adventure that runs on Browser. 
@@ -17,15 +20,10 @@ After entering your desired 'Player Name', you'll be prompted by a chapter and s
 
 **Screenshots:**
 
-![alt text](image.jpg)
+![start screen](image.jpg)
 ![alt text](image.jpg)
 ![alt text](image.jpg) 
 
-
-**Features:**
-
--Light/Dark mode
--turn js
 
 **Ice-box Goals/ Improvements to Come:** 
 
