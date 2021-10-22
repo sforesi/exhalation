@@ -8,8 +8,8 @@ const images = [
   "",
 ];
 
-const gameMusic = new Audio('music/watermarked_Kit_Keenlyside_Photos_Of_Our_Lives_instrumental_2_18.mp3')
-
+// 
+const gameMusic = new Audio('../music/watermarked_Kit_Keenlyside_Photos_Of_Our_Lives_instrumental_2_18.mp3')
 
 /*------------- Variables (state) -------------*/
 //object to establish the original state of the game
@@ -299,8 +299,9 @@ if (story[chapter].choices.length) {
     // content.innerHTML = ''  
     restartButton.style.display = 'block'
     proceedButton.style.display = 'none'
-  }
+  } 
    // function to retrieve choices from story object
+
 }
 
 function startGame() {
@@ -352,5 +353,15 @@ document.addEventListener("DOMContentLoaded", function() { // create an event li
 function gameMusicPlay(){
   gameMusic.volume = 0.1
   gameMusic.play()
-}
+};
 
+function renderWin(){
+  if(story[chapter].win == true
+    ){
+      const winGame = "You've unspooled this yarn, you win!"
+    section.innerHTML = winGame
+    // content.innerHTML = ''  
+    restartButton.style.display = 'block'
+    proceedButton.style.display = 'none'
+  }
+}
