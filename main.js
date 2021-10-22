@@ -1,12 +1,10 @@
 
 /*----------------- Constants -----------------*/
 const images = [
-  "https://i.pinimg.com/564x/9b/d0/32/9bd032369a052f883ff54b2907b26e1c.jpg",
-  "https://i.pinimg.com/originals/b0/10/e9/b010e954f94acbd034917b2d6931bd79.gif",
-  "https://64.media.tumblr.com/5f4c0252b15dda55028536c5a8923c7d/b691a90722d7bbb5-c8/s500x750/34aac55dfd7302e41fec400ba9636edeadb1890a.gif",
-  "https://64.media.tumblr.com/746e848c8b0cf90bc7938599421e6b4e/tumblr_pbhfk0rEth1txe8seo1_500.gif",
-  "https://media2.giphy.com/media/Wm9XlKG2xIMiVcH4CP/giphy.gif",
-  "https://i.pinimg.com/564x/74/c7/7a/74c77a7ec30abd824c21283522a7664f.jpg",
+  "https://media4.giphy.com/media/MuAsb0Gatgo4a4BEYx/giphy.gif?cid=790b76112abd1e6a3b73bb53f2ef57a53e827266ceb83968&rid=giphy.gif&ct=g",
+  "https://media0.giphy.com/media/3og0IV7MOCfnm85iRa/giphy.gif?cid=790b7611eabe3308d23f076b6d11d4e0d5c1972672b25b2e&rid=giphy.gif&ct=g",
+  "https://media3.giphy.com/media/26tnaNlcZHVwfsQTe/giphy.gif?cid=790b7611655928d137c77e4961b901c4b4e8d7d19cdad8ff&rid=giphy.gif&ct=g",
+  "https://media4.giphy.com/media/H1B8ZtMvhpy6QjpOnN/giphy.gif?cid=790b76112743c6d301390f9e0157fa3cf3429240d52f8fa0&rid=giphy.gif&ct=g",
 ];
 
 /*------------- Variables (state) -------------*/
