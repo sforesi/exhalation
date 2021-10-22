@@ -67,8 +67,6 @@ let story = {
      // incorrect or losing destination
   },
 
-
-  
   solo: {
     title: "I Get It...",
     text: "I prefer to shop on my own as well. Unfortunately you gotta try again.",
@@ -84,7 +82,7 @@ let story = {
     win: false,
      // incorrect or losing destination
   },
-  
+
   curious: {
     title: "3",
     text: '"I am grateful for your kind words. Everything you see here was made in my workshop, either by myself or by my assistants under my direction," says your companion. You start to notice strange symbols all around the shop.  ',
