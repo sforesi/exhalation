@@ -57,7 +57,18 @@ let story = {
     win: false,
   
      // incorrect or losing destination
+  }, 
+    
+  disinterested: {
+    title: "I get it...",
+    text: "I prefer to shop on my own as well, sorry you gotta restart the game.",
+    choices: [],
+    win: false,
+     // incorrect or losing destination
   },
+
+
+  
   solo: {
     title: "I Get It...",
     text: "I prefer to shop on my own as well. Unfortunately you gotta try again.",
@@ -65,13 +76,15 @@ let story = {
     win: false,
      // incorrect or losing destination
   },
-  disinterested: {
+
+  resume: {
     title: "Not quite...",
     text: "You hand them your CV, and they look at you puzzled. This is a magical fantasy store, and they doesn't really take resumes.",
     choices: [],
     win: false,
      // incorrect or losing destination
   },
+  
   curious: {
     title: "3",
     text: '"I am grateful for your kind words. Everything you see here was made in my workshop, either by myself or by my assistants under my direction," says your companion. You start to notice strange symbols all around the shop.  ',
