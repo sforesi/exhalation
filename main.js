@@ -34,7 +34,7 @@ let story = {
   }, 
   enter: { 
     title: "2",
-    text: "You enter the shop, which hums with the whirs and clanks of gears and mechanisms. At the entrance sits an astrolabe inlaid in silver, so large it could be the face of a clock tower. A water-clock sounds, its chime whistled by a swallow that seems to raise itself out the water. A figure steps out from what seems to be an infinite doorway. Their eyes are kind and familiar, their voice warm. They greet you like an old friend. How do you respond?",
+    text: "You enter the shop, which hums with the whirs and clanks of gears and mechanisms. At the entrance sits an astrolabe inlaid in silver, so large it could be the face of a clock tower. A water-clock sounds, its chime whistled by a swallow that seems to raise itself out the water. A figure steps out from what seems to be an infinite doorway. Their eyes are kind and familiar, their voice warm. How do you respond?",
     choices: [
       {
         choice:'Tell them you want to shop on your own.',
@@ -77,7 +77,7 @@ let story = {
 
   resume: {
     title: "Not quite...",
-    text: "You hand them your CV, and they look at you puzzled. This is a magical fantasy store, and they doesn't really take resumes.",
+    text: "You hand them your CV, and they look at you puzzled. This is a magical fantasy store, and they don't really take resumes.",
     choices: [],
     win: false,
      // incorrect or losing destination
@@ -120,7 +120,7 @@ let story = {
 
   alchemy: {
     title: "4",
-    text: "Clearly you've struck a nerve with you companion, as they ignore two shouting voices from right outside the story. Instead, they tell you they've recently built something that may change your mind... Do you care to see it?",
+    text: "Clearly you've struck a nerve with you companion, as they ignore two shouting voices from right outside the store. Instead, they tell you they've recently built something that may change your mind... Do you care to see it?",
     choices: [
       {
         choice: "No, you go to check on what all the commotion is about.",
@@ -147,19 +147,19 @@ let story = {
 
   show: {
     title: "5",
-    text: "Your companion leads you down the corridor towards their workshop. It's brimming with devices and mechanism you've never seen. Winding labyrinths of metal bars, a mirror mounted on circular slab floats in quicksilver. How do you react to the workshop?",
+    text: "Your companion leads you down the corridor towards their workshop. It's brimming with devices and mechanism you've never seen. Winding labyrinths of metal bars, a mirror mounted on circular slab floats in quicksilver. They lead you to a pedestal that stands about chest height, a black metal hoop mounted atop it. They thrusts their arm through the hoop from the right side, but it doesn’t appear out of the left. Instead the arm seems severed, leaving a stump which they wave at you.",
     choices: [
       {
-        choice: "No, you go to check on what all the commotion is about.",
-        destination:'yelling',
+        choice: "Applaud courteously, even though you think it's a little embarassing that they're into party-magic.",
+        destination:'applaud',
       },
       {
-        choice:'Yes, without a moments hesitation.',
-        destination: 'show',
+        choice:'Scoff at how stupid the illusion is, and act like you totally get how it works.',
+        destination: 'scoff',
       },
       {
-        choice:"Tell them that even if alchemy does exist, it is surely the Devil's art, and storm out the store",
-        destination: 'devil',
+        choice:"Knock the pedestal down, and run out the store. You have no time for witch-craft.",
+        destination: 'witch',
       },
     ],
 },
@@ -172,11 +172,22 @@ devil: {
    // incorrect or losing destination
 },
 
+
+scoff: {
+  title: "Curiousity killed the cat...",
+  text: "Well not really... you go outside to find what you mistook for two people yelling were actually two very large tabby cats in the middle of a heated scuffle. You turn back to walk into the shop, yet somehow when you do, it's vanished.",
+  choices: [],
+  win: false,
+   // incorrect or losing destination
+},
+
+
 }
 
 let currentChapter = {}
 
-
+// const gameMusic;  
+var myMusic = {}
 
 
 /*--------- Cached Element References ---------*/
@@ -196,6 +207,7 @@ let currentChapter = {}
   const nameLabel = document.querySelector('#name-label')
   const lightDarkBtn = document.querySelector("#light-dark-button")
   const body = document.querySelector("body")
+  
 
 
 checkDarkPref()
