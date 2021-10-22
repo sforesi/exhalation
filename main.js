@@ -203,21 +203,29 @@ applaud: {
     // incorrect or losing destination
     },  
 
-      play: {
-        title: "Satan, satan, satan...",
-        text: "You leave the shop, never getting to find out whether or not Alchemy is real. Well, unless you play again.",
-        choices: [],
-        win: false,
-        // incorrect or losing destination
-    },
   play: {
     title: "Satan, satan, satan...",
     text: "You leave the shop, never getting to find out whether or not Alchemy is real. Well, unless you play again.",
     choices: [],
+    win: false,    
+        // incorrect or losing destination    
+    },    
+  missed: {
+    title: "Stay focused! Your companion refuses to demonstrate again...",
+    text: "Your companion refuses to demonstrate again...",
+    choices: [],
     win: false,
     // incorrect or losing destination
   },
+
+  admit: {
+    title: "7",
+    text: "Your companion pulls their arm out and takes a step back away from the hoop. As they back away, their appears out the left side of the hoop and waves up and down enthusiastically. 'Thank you, my lord. But this is not mere slight of hand. The right precedes the left by several seconds. To pass through the hoop is to cross that duration instantly.' What do you do?",
+    choices: [],
+    win = true
+  }
 }
+
 
 let currentChapter = {}
 
