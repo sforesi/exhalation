@@ -1,12 +1,12 @@
 
 /*----------------- Constants -----------------*/
 const images = [
-  "https://data.whicdn.com/images/251238216/original.gif",
-  "https://i.gifer.com/7Rrs.gif",
+  "https://i.pinimg.com/564x/9b/d0/32/9bd032369a052f883ff54b2907b26e1c.jpg",
   "https://i.pinimg.com/originals/b0/10/e9/b010e954f94acbd034917b2d6931bd79.gif",
   "https://64.media.tumblr.com/5f4c0252b15dda55028536c5a8923c7d/b691a90722d7bbb5-c8/s500x750/34aac55dfd7302e41fec400ba9636edeadb1890a.gif",
   "https://64.media.tumblr.com/746e848c8b0cf90bc7938599421e6b4e/tumblr_pbhfk0rEth1txe8seo1_500.gif",
-  "https://media2.giphy.com/media/Wm9XlKG2xIMiVcH4CP/giphy.gif"
+  "https://media2.giphy.com/media/Wm9XlKG2xIMiVcH4CP/giphy.gif",
+  "https://i.pinimg.com/564x/74/c7/7a/74c77a7ec30abd824c21283522a7664f.jpg",
 ];
 
 /*------------- Variables (state) -------------*/
@@ -58,15 +58,15 @@ let story = {
      // incorrect or losing destination
   },
   solo: {
-    title: "Not your taste...",
-    text: "You've chosen to save adventure for another time. Try again when you're up for a story!'.",
+    title: "I Get It...",
+    text: "I prefer to shop on my own as well. Unfortunately you gotta try again.",
     choices: [],
     win: false,
      // incorrect or losing destination
   },
-  resume: {
-    title: "Not your taste...",
-    text: "You've chosen to save adventure for another time. Try again when you're up for a story!'.",
+  disinterested: {
+    title: "Not quite...",
+    text: "You hand them your CV, and they look at you puzzled. This is a magical fantasy store, and they doesn't really take resumes.",
     choices: [],
     win: false,
      // incorrect or losing destination
@@ -209,4 +209,13 @@ checkDarkPref()
 //     });
 //   });
 // });
+
+document.addEventListener("DOMContentLoaded", function() { // create an event listener on entire document to check if dom has loaded
+  let current = 0; // set to first element in images array
+  let mirrorContent = document.getElementById('mirror-content');//calling the mirror containe to JS
+  mirrorContent.onclick= function() {
+    this.style.backgroundImage = 'url(' + images[current++ % images.length] + ')'
+  }//the even listener that listens for user click
+}
+);
 

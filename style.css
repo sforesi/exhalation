@@ -18,9 +18,8 @@ body {
 
 
 body.dark {
-  --body-bg: #8a8b9b;
+  --body-bg: #e4e0e6;
   --btn-text-color: #2a2a2a;
-  --card-text-color: #3e3e3e;
   --header-bg: #007bbe;
   --header-text-color: #d8d8d8;
   --inverted-btn-text-color: #eaeaea;
@@ -28,7 +27,15 @@ body.dark {
     background-color: var(--body-bg);
     --scene-background-color: #daacae; 
   overflow: hidden;
-    /* background-color: var(--body-bg); */
+  
+}
+
+#text{
+  font-size: 27px ;
+}
+
+#title{
+  
 }
 
 #content {
@@ -36,6 +43,7 @@ body.dark {
   height: 100vh;
   background: white;
   padding: 25px;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 input {
@@ -58,7 +66,7 @@ button {
 }
 
 #light-dark-button {
-
+  font-family: 'Courier New', Courier, monospace;
 }
 
 #light-dark-button::after {
@@ -96,59 +104,9 @@ button {
   pointer-events: none;
 }
 
-#plant {
-  background-image: url(https://ouch-cdn2.icons8.com/CZaKIJ63jjlgvDcdjcjUnlfpffRScIiXzi4HMrpLAsM/rs:fit:728:912/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9wbmcvNjM2/L2RkMzRmMzVhLWVk/YmMtNDRlZi1hOGNm/LTZlZjJlMTBlMzU2/My5wbmc.png);
-  width: 500px;
-  height: 620px;
-  bottom: -26px;
-  margin-right: 400px;
-}
-
-#plant-2 {
-  background-image: url(https://ouch-cdn2.icons8.com/E47kcuNp_3-4IrDybcMwr6zMELcbhBQLKzImj-ot8E4/rs:fit:855:912/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9wbmcvMzE5/LzljNjEwNjJhLTk4/YmMtNDViMS1iZGVm/LTMwNzVjMTMxYjQ1/OC5wbmc.png);
-  width: 300px;
-  height: 320px;
-  bottom: -50px;
-  margin-right: 300px;
-}
-
-#plant-3 {
-  background-image: url(https://ouch-cdn2.icons8.com/oo4nsgAN74wL_FDHCUIwOdB3rPN6SGavRjxiz-1ds4s/rs:fit:1201:912/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9wbmcvMTk0/LzVlMGQ1NjhlLWNh/NTEtNGJlNC1iNWEz/LTQyYTcwNDlmZGMy/My5wbmc.png);
-  width: 160px;
-  height: 125px;
-  bottom: -50px;
-  margin-left: 380px;
-}
-
-#books {
-  background-image: url(https://ouch-cdn2.icons8.com/AUAdQ5eK8APXniP0hwVusHWtZRMk9FA2Jm9FSza1StY/rs:fit:850:912/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9wbmcvNy9j/NTcxMWIzNC1mMTYy/LTQ3MTAtOGExYi1l/YzY1M2FlN2IwYWYu/cG5n.png);
-  width: 200px;
-  height: 220px;
-  bottom: -40px;
-  margin-left: 620px;
-}
-
-#apple {
-  background-image: url(https://ouch-cdn2.icons8.com/-O2SifADepTOg7bXJ5whR6wB0iMfq5y7vrIaJdmKp20/rs:fit:851:912/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9wbmcvODYy/L2M3MjBkM2Q3LWMw/NTgtNDJkOC04ZGEw/LTc2MTM1N2YwMmNh/OC5wbmc.png);
-  width: 64px;
-  height: 70px;
-  top: -64px;
-  left: 30px;
-}
-
-#clock {
-  background-image: url(https://ouch-cdn2.icons8.com/ggxsAQVGAa4GMIlNl6vMuk0ANcEK07E5woeRpplKofI/rs:fit:945:912/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9wbmcvMzI0/L2RmMDQzMzc4LTcy/NTUtNDA5My04ZDQy/LTgxOTJjNmE2ZmQx/ZC5wbmc.png);
-  width: 170px;
-  height: 170px;
-  background-size: 100% auto;
-  background-position: left top;
-  bottom: 520px;
-  margin-left: 440px;
-}
-
 #mirror {
-  width: 140px;
-  height: 280px;
+  width: 280px;
+  height: 560px;
   /* position: relative; */
   box-shadow: 16px 2px 10px rgba(0, 0, 0, 0.4);
   perspective: 500px;
